@@ -1,0 +1,251 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="FormCreate_UipathAction" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1410.4,2822.4" sap2010:WorkflowViewState.IdRef="FormCreate_UipathAction_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upaf="clr-namespace:UiPath.Persistence.Activities.FormTask;assembly=UiPath.Persistence.Activities" xmlns:upat="clr-namespace:UiPath.Persistence.Activities.Tasks;assembly=UiPath.Persistence.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="38">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Persistence.Activities.Model.Task</x:String>
+      <x:String>UiPath.Persistence.Activities.FormTask</x:String>
+      <x:String>UiPath.Persistence.Activities.BaseTask</x:String>
+      <x:String>UiPath.Persistence.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Persistence.Activities.Tasks</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Database</x:String>
+      <x:String>UiPath.Database.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="31">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Persistence.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>UiPathTeam.SharePoint</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>OfficeDevPnP.Core</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="FormCreate_UipathAction" sap:VirtualizedContainerService.HintSize="524.8,2757.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="upaf:FormTaskData" Name="formTask_input" />
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="invoiceHeader" />
+      <Variable x:TypeArguments="sd:DataTable" Name="lineItemDataTable" />
+      <Variable x:TypeArguments="scg:List(upat:TaskUserAssignment)" Name="deptTaskUserAssignment_List" />
+      <Variable x:TypeArguments="scg:List(upat:TaskAssignmentResponse)" Name="deptFailed_ResponseTaskAssignements_List" />
+      <Variable x:TypeArguments="upat:TaskAssignmentResponse" Name="firstFailure_TaskResponse" />
+      <Variable x:TypeArguments="upaf:FormTaskData" Name="formTask_output" />
+      <Variable x:TypeArguments="x:String" Name="deptHeadApprovalStatus" />
+      <Variable x:TypeArguments="x:String" Name="deptHeadTaskID" />
+      <Variable x:TypeArguments="x:String" Name="deptHeadApprovalComment" />
+      <Variable x:TypeArguments="sd:DataTable" Name="deptHeadDataBaseQueryOutput" />
+      <Variable x:TypeArguments="x:Boolean" Name="in_ProductionMode" />
+      <Variable x:TypeArguments="x:String" Name="deptHeadApprover" />
+      <Variable x:TypeArguments="x:String" Name="deptHeadApprovalTime" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <upaf:CreateFormTask BucketFolderPath="{x:Null}" BucketName="{x:Null}" BulkFormLayout="{x:Null}" ExternalTag="{x:Null}" FormLayout="{x:Null}" Labels="{x:Null}" TimeoutMs="{x:Null}" BulkFormLayoutGuid="91ff3c9f-b4a8-406c-b359-485403049aa8" DisplayName="Create Form Task" EnableBulkEdit="False" FormLayoutGuid="233a8b44-8762-4f3d-b644-bc5c6f6bd636" GenerateInputFields="True" sap:VirtualizedContainerService.HintSize="483.2,372.8" sap2010:WorkflowViewState.IdRef="CreateFormTask_1" TaskCatalog="Purchaser/Department Head" TaskOutput="[formTask_input]" TaskPriority="[TaskPriority.Medium]" TaskTitle="DeptHeadApprovalTitle">
+      <upaf:CreateFormTask.FormData>
+        <InArgument x:TypeArguments="x:String" x:Key="Name">[invoiceHeader("Name")]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="InvoiceNumber">[invoiceHeader("InvoiceNumber")]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="InvoiceDate">[invoiceHeader("InvoiceDate")]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="PurchaseOrderNumber">[invoiceHeader("Purchase Order")]</InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="InvoiceLineData">[lineItemDataTable]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="AdminName">Admin</InArgument>
+      </upaf:CreateFormTask.FormData>
+    </upaf:CreateFormTask>
+    <Assign sap:VirtualizedContainerService.HintSize="483.2,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="scg:List(upat:TaskUserAssignment)">[deptTaskUserAssignment_List]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="scg:List(upat:TaskUserAssignment)">[new List(Of TaskUserAssignment)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="taskAssignment.Add(new TaskUserAssignment(FormTaskInput.Id, approverMail))" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="483.2,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+      <ui:InvokeCode.Arguments>
+        <InOutArgument x:TypeArguments="scg:List(upat:TaskUserAssignment)" x:Key="taskAssignment">[deptTaskUserAssignment_List]</InOutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="approverMail">Invoice@alsco.co.nz</InArgument>
+        <InArgument x:TypeArguments="upaf:FormTaskData" x:Key="FormTaskInput">[formTask_input]</InArgument>
+      </ui:InvokeCode.Arguments>
+    </ui:InvokeCode>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="483.2,187.2" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <upat:AssignTasks TimeoutMs="{x:Null}" DisplayName="Assign Tasks" FailedTaskAssignments="[deptFailed_ResponseTaskAssignements_List]" sap:VirtualizedContainerService.HintSize="333.6,222.4" sap2010:WorkflowViewState.IdRef="AssignTasks_1" TaskAssignmentType="[TaskAssignmentType.Assign]" TaskUserAssignments="[deptTaskUserAssignment_List]" />
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Assign task for invoice:&quot;+invoiceHeader(&quot;Invoice Number&quot;).ToString+&quot;failed-&quot;+&quot;DepartHeadApprovalEmail&quot;+&quot;-&quot;+deptFailed_ResponseTaskAssignements_List.ToString]" />
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <If Condition="[deptFailed_ResponseTaskAssignements_List.Count&gt;0]" sap:VirtualizedContainerService.HintSize="483.2,474.4" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="375.2,285.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign.To>
+              <OutArgument x:TypeArguments="upat:TaskAssignmentResponse">[firstFailure_TaskResponse]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="upat:TaskAssignmentResponse">[deptFailed_ResponseTaskAssignements_List.First]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Warn" Message="[&quot;Failed to assign department head arpproval task: &quot;+firstFailure_TaskResponse.ErrorMessage]" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+    <upaf:WaitForFormTaskAndResume StatusMessage="{x:Null}" TaskAction="{x:Null}" WaitItemDataObject="{x:Null}" DisplayName="Wait for Form Task and Resume" sap:VirtualizedContainerService.HintSize="483.2,222.4" sap2010:WorkflowViewState.IdRef="WaitForFormTaskAndResume_1" TaskInput="[formTask_input]" TaskOutput="[formTask_output]" TimeoutMs="300000" />
+    <Assign sap:VirtualizedContainerService.HintSize="483.2,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[deptHeadApprovalStatus]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[formTask_output.Action]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="483.2,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[deptHeadTaskID]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[formTask_output.Id.ToString]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="483.2,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[deptHeadApprovalComment]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[Newtonsoft.Json.Linq.JObject.FromObject(formTask_output.Data).GetValue("Manager Comments").ToString]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="483.2,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+      <Assign.To>
+        <OutArgument x:TypeArguments="sd:DataTable">[deptHeadDataBaseQueryOutput]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="sd:DataTable">[new DataTable("DHBQueryOutput")]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <If Condition="[in_ProductionMode]" sap:VirtualizedContainerService.HintSize="483.2,371.2" sap2010:WorkflowViewState.IdRef="If_2">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="375.2,182.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="sd:DataTable" Name="deptHeadDatabaseQueryOutput" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:ExecuteQuery ContinueOnError="{x:Null}" ExistingDbConnection="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" ConnectionString="Data Source=NZ-UIORCHESP01;Initial Catalog=UiPath;Persist Security Info=True;User ID=uipathadmn;Password=NZuipath2020$" DataTable="[deptHeadDatabaseQueryOutput]" DisplayName="Run query-Execute query" sap:VirtualizedContainerService.HintSize="333.6,89.6" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" ProviderName="System.Data.SqlClient" Sql="[&quot;Select tasks.Id,tasks.Status,tasks.LastModificationTime, CONCAT(user.Name, ' ' , uses.Surname) as UserName FROM dbo.Tasks tasks INNERJOIN dbo.Users users ON tasks.AssignedToUserId=users.Id WHERE tasks.id=&quot;+formTask_output.Id.ToString]">
+            <ui:ExecuteQuery.Parameters>
+              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+            </ui:ExecuteQuery.Parameters>
+          </ui:ExecuteQuery>
+        </Sequence>
+      </If.Then>
+    </If>
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="483.2,132" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[deptHeadApprover]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[deptHeadDataBaseQueryOutput.Rows(0).Item(3).ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[deptHeadApprovalTime]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[deptHeadDataBaseQueryOutput.Rows(0).Item(2).ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
+  </Sequence>
+</Activity>
